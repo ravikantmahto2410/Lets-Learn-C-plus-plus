@@ -11,20 +11,12 @@ public:
         this->right = NULL;
     }
 };
-void preorder(Node* root){
+
+void preorder(Node* root){         /////// Hack : (root ,left, right)  // also known as DFS (Defth First Search)
     if(root == NULL) return;// base case
     cout<<root->val<<" "; // Work 
     preorder(root->left); // call 2
     preorder(root->right); // call 1
-    
-    
-}
-
-void inorder(Node* root){
-    if(root == NULL) return;// base case
-    inorder(root->left); // call 2
-    cout<<root->val<<" "; // Work 
-    inorder(root->right); // call 1
     
     
 }
@@ -44,10 +36,8 @@ int main(){
     b->right = e;
     c->left = f;
     c->right = g;
+
     preorder(a);
-    cout<<endl;
-    inorder(a);
-    cout<<endl;
     
 
 }
