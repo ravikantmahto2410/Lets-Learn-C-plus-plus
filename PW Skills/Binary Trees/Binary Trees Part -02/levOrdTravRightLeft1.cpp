@@ -57,14 +57,15 @@ void nthLevel(Node* root, int curr, int level){ // optimised
     nthLevel(root->right,curr+1,level); // call 1
      
 }
-void nthLevelRev(Node* root, int curr, int level){ // optimised
+void nthLevelRev(Node* root, int curr, int level){ // optimised for right to left printing
     if(root == NULL) return;// base case
     if(curr==level){
         cout<<root->val<<" "; //root
         return;
     }
-    nthLevelRev(root->left,curr+1,level); // call 2
+    
     nthLevelRev(root->right,curr+1,level); // call 1
+    nthLevelRev(root->left,curr+1,level); // call 2
      
 }
 void levelOrder(Node* root){

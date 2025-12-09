@@ -27,7 +27,7 @@ void inorder(Node* root){
     
     
 }
-void postorder(Node* root){
+void postorder(Node* root){   //  hack : (left, right, root)
     if(root == NULL) return;// base case
     postorder(root->left); // call 2
     postorder(root->right); // call 1
