@@ -78,7 +78,7 @@ public:
     }
 };
 int main(){
-    vector<int>v {9, 6, 1, 19, 3, 2, 8, 12, 5};
+    vector<int>v = {9, 6, 1, 19, 3, 2, 8, 12, 5};
     MaxHeap hp(v);
     hp.display();
     return 0;

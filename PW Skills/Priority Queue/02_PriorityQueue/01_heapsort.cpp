@@ -20,16 +20,16 @@ class MaxHeap {
             int lc = 2 * idx + 1;
             int rc = 2 * idx + 2;
             if(lc >= bound) break; // idx -> leaf
-            int maxElem = idx;
-            if(hp[lc] > hp[maxElem]){
-                maxElem = lc;
+            int maxEl = idx;
+            if(hp[maxEl] < hp[lc]){
+                maxEl = lc;
             }
-            if(rc < bound && hp[rc] > hp[maxElem]){
-                maxElem = rc;
+            if(rc < bound && hp[maxEl] < hp[rc]){
+                maxEl = rc;
             }
-            if(maxElem != idx){
-                swap(hp[idx], hp[maxElem]);
-                idx = maxElem; //this  is for next Iteration
+            if(maxEl != idx){
+                swap(hp[idx], hp[maxEl]);
+                idx = maxEl; //this  is for next Iteration
             }else{
                 break;
             }
@@ -37,8 +37,12 @@ class MaxHeap {
     }
 
 public: 
-    
 
+    void push(int element){
+        hp.push_back(element);
+        upheapify(hp.size() - 1);
+    }
+    
     void pop(){
 
         /*
@@ -47,10 +51,10 @@ public:
         //remove the highest priority element
         if(empty()) return;
         swap(hp[0],hp[hp.size()-1]);
-        hp.pop_back();
+        
         i--;
-        if(!empty());
-        downheapify(0 , i);
+        if(!empty()) downheapify(0 , i);
+        
     }
     int peek(){
         /*
@@ -65,17 +69,15 @@ public:
     }
     void display() {
         cout<<"[";
-        for(int i = 0; i < hp.size(); i++){
-            cout<<hp[i]<<" ";
+        for(int j = 0; j < i; j++){
+            cout<<hp[j]<<" ";
         }
-        cout<<"]"<<endl;
+        cout<<"]\n";
     }
 
-    void heapSort(){
-        
-    }
+    
     //constructor
-    MaxHeap(vector<int> v){
+    MaxHeap(vector<int>& v ){
         hp = v;
         //reverse mein loop chalayenge and we can skip half of the elements
         int n = hp.size();
@@ -84,10 +86,41 @@ public:
             downheapify(j, i);
         }
     }
+
+    // vector<int>heapsort(){
+    //     int sz = hp.size();
+    //     while(sz > 0){
+    //         int el = 0;
+    //         swap(hp[el], hp[i]);
+    //         i--;
+    //         sz--;
+    //         downheapify(0,i);
+    //     }   
+    //     return hp; 
+    // }
+
+    void heapsort(){
+        int sz = hp.size();
+        while(sz  > 1){
+            int el = 0
+        }
+    }
 };
+void heapsort(vector<int>& v){
+    MaxHeap hp(v);
+    // v = hp.heapsort();
+}
 int main(){
-    vector<int>v {9, 6, 1, 19, 3, 2, 8, 12, 5};
+    vector<int>v = {9, 6, 1, 19, 3, 2, 8, 12, 5};
     MaxHeap hp(v);
     hp.display();
+    hp.push(100);
+    hp.display();
+    // heapsort(v);
+    // cout<<"[";
+    // for(int j = 0; j < v.size(); j++){
+    //     cout<<v[j]<<" ";
+    // }
+    // cout<<"]\n";
     return 0;
 }

@@ -19,7 +19,7 @@ class MaxHeap {
             int lc = 2 * idx + 1;
             int rc = 2 * idx + 2;
             if(lc >= hp.size()) break; // idx -> leaf
-            int maxElem = idx;
+            int maxElem = idx; // assumin the current root node is the msximum
             if(hp[lc] > hp[maxElem]){
                 maxElem = lc;
             }
@@ -27,6 +27,7 @@ class MaxHeap {
                 maxElem = rc;
             }
             if(maxElem != idx){
+                
                 swap(hp[idx], hp[maxElem]);
                 idx = maxElem; //this  is for next Iteration
             }else{
@@ -45,7 +46,6 @@ public:
     }
 
     void pop(){
-
         /*
         Time Complexity = O(logn);
         */
@@ -91,9 +91,9 @@ int main(){
     hp.display();
     hp.pop();
     hp.display();
-    hp.pop();
-    hp.display();
-    hp.pop();
-    hp.display();
+    // hp.pop();
+    // hp.display();
+    // hp.pop();
+    // hp.display();
     return 0;
 }
