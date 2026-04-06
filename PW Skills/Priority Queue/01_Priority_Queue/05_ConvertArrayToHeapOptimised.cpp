@@ -21,10 +21,10 @@ class MaxHeap {
             int rc = 2 * idx + 2;
             if(lc >= hp.size()) break; // idx -> leaf
             int maxElem = idx;
-            if(hp[lc] > hp[maxElem]){
+            if(hp[maxElem < hp[lc]]){
                 maxElem = lc;
             }
-            if(rc < hp.size() && hp[rc] > hp[maxElem]){
+            if(rc < hp.size() && hp[maxElem < hp[rc]]){
                 maxElem = rc;
             }
             if(maxElem != idx){

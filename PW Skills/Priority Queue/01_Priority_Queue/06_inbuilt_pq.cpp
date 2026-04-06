@@ -15,10 +15,10 @@ int main(){
     // hp.push(50);
     
     // cout<<hp.top()<<endl;
-
-
-
-
+    
+    
+    // priority_queue<int, vector<int>, less<int>>hp; // For Maxheap defualt although for maxheap we simply write // priority_queue<int>hp; 
+    
     //To make default  implementation MinHeap 
     priority_queue<int, vector<int>, greater<int>> hp;//greater<int> kya karta hai ki if there are two values a and b then it checks a > b
     hp.push(3);

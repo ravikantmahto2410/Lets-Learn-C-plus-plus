@@ -20,17 +20,17 @@ class MaxHeap {
             int rc = 2 * idx + 2;
             if(lc >= hp.size()) break; // idx -> leaf
             int maxElem = idx; // assumin the current root node is the msximum
-            if(hp[lc] > hp[maxElem]){
+            if(hp[maxElem < hp[lc]]){
                 maxElem = lc;
             }
-            if(rc < hp.size() && hp[rc] > hp[maxElem]){
+            if(rc < hp.size() && hp[maxElem < hp[rc]]){
                 maxElem = rc;
             }
-            if(maxElem != idx){
+            if(maxElem != idx){ // this means that the root node lc and rc se khud bada nahi hai, that means either left child bada hai ya right child bada hai
                 
                 swap(hp[idx], hp[maxElem]);
                 idx = maxElem; //this  is for next Iteration
-            }else{
+            }else{ // this means agar ki root khud sabse bada hai , that means ki, current tree ek heap hai
                 break;
             }
         }
