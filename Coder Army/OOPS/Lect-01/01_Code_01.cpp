@@ -32,3 +32,12 @@
 
 
 // But to avoid this we use the concept of class like this
+
+// To create the class Student
+    /* class Student {
+        string name;
+        int age, roll_number;
+        string grade;
+    }*/
+
+    
