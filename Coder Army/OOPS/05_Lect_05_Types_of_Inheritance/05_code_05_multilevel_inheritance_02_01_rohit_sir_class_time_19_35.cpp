@@ -38,6 +38,6 @@ public:
 
 int main(){
     Manager A1("Bandariya", 200, "Finance");
-    A1.work();
+    A1.monthly_salary();
 
 }

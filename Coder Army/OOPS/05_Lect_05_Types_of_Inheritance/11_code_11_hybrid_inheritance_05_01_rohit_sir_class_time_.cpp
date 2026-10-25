@@ -42,19 +42,7 @@ public:
     }
 };
 
-class Male{
-public:
-    void maleprint(){
-        cout<<"I am a Male"<<endl;
-    }
-};
 
-class Female{
-public:
-    void femalprint(){
-        cout<<"I am a female"<<endl;
-    }
-};
 
 int main(){
     Girl G1;
